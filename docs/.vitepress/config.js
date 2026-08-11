@@ -6,28 +6,28 @@ const chaptersSidebar = [
     text: '🚀 认识互联网',
     collapsed: false,
     items: [
-      { text: '第0章 学习路线与课程介绍', link: '/chapters/chapter00/' },
-      { text: '第1章 互联网到底是什么？', link: '/chapters/chapter01/' },
-      { text: '第2章 家庭网络基础', link: '/chapters/chapter02/' },
-      { text: '第3章 域名与DNS', link: '/chapters/chapter03/' }
+      { text: '第00章 学习路线与课程介绍', link: '/chapters/chapter00/' },
+      { text: '第01章 互联网基础设施全景认识', link: '/chapters/chapter01/' },
+      { text: '第02章 家庭网络基础', link: '/chapters/chapter02/' },
+      { text: '第03章 域名与DNS', link: '/chapters/chapter03/' }
     ]
   },
   {
     text: '⚡ 互联网基础设施核心',
     collapsed: false,
     items: [
-      { text: '第4章 Cloudflare基础', link: '/chapters/chapter04/' },
-      { text: '第5章 SSL/TLS安全通信', link: '/chapters/chapter05/' },
-      { text: '第6章 CDN全球加速', link: '/chapters/chapter06/' },
-      { text: '第7章 网站安全防护', link: '/chapters/chapter07/' }
+      { text: '第04章 Cloudflare基础', link: '/chapters/chapter04/' },
+      { text: '第05章 SSL/TLS安全通信', link: '/chapters/chapter05/' },
+      { text: '第06章 CDN全球加速', link: '/chapters/chapter06/' },
+      { text: '第07章 网站安全防护', link: '/chapters/chapter07/' }
     ]
   },
   {
     text: '☁️ 服务器与云计算',
     collapsed: false,
     items: [
-      { text: '第8章 VPS服务器入门', link: '/chapters/chapter08/' },
-      { text: '第9章 Linux服务器基础', link: '/chapters/chapter09/' },
+      { text: '第08章 VPS服务器入门', link: '/chapters/chapter08/' },
+      { text: '第09章 Linux服务器基础', link: '/chapters/chapter09/' },
       { text: '第10章 Docker容器技术', link: '/chapters/chapter10/' }
     ]
   },
