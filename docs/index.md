@@ -6,6 +6,8 @@ layout: home
 
 <WhyLearn />
 
+<CourseEntrance />
+
 <FeatureCards />
 
 <KnowledgeSystem />

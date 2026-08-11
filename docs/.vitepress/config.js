@@ -3,49 +3,49 @@ import { defineConfig } from 'vitepress'
 // 课程侧边栏配置 —— 分组折叠式
 const chaptersSidebar = [
   {
-    text: '🚀 入门阶段',
+    text: '🚀 认识互联网',
     collapsed: false,
     items: [
       { text: '第0章 学习路线与课程介绍', link: '/chapters/chapter00/' },
-      { text: '第1章 认识Cloudflare', link: '/chapters/chapter01/' },
-      { text: '第2章 互联网基础知识', link: '/chapters/chapter02/' },
-      { text: '第3章 注册Cloudflare并接入域名', link: '/chapters/chapter03/' }
+      { text: '第1章 互联网到底是什么？', link: '/chapters/chapter01/' },
+      { text: '第2章 家庭网络基础', link: '/chapters/chapter02/' },
+      { text: '第3章 域名与DNS', link: '/chapters/chapter03/' }
     ]
   },
   {
-    text: '⚡ Cloudflare 核心',
+    text: '⚡ 互联网基础设施核心',
     collapsed: false,
     items: [
-      { text: '第4章 Cloudflare DNS教程', link: '/chapters/chapter04/' },
-      { text: '第5章 Cloudflare SSL/TLS教程', link: '/chapters/chapter05/' },
-      { text: '第6章 Cloudflare CDN教程', link: '/chapters/chapter06/' },
+      { text: '第4章 Cloudflare基础', link: '/chapters/chapter04/' },
+      { text: '第5章 SSL/TLS安全通信', link: '/chapters/chapter05/' },
+      { text: '第6章 CDN全球加速', link: '/chapters/chapter06/' },
       { text: '第7章 网站安全防护', link: '/chapters/chapter07/' }
     ]
   },
   {
-    text: '☁️ 云服务与存储',
+    text: '☁️ 服务器与云计算',
     collapsed: false,
     items: [
-      { text: '第8章 Cloudflare Zero Trust', link: '/chapters/chapter08/' },
-      { text: '第9章 Workers与Pages', link: '/chapters/chapter09/' },
-      { text: '第10章 R2、D1与个人云', link: '/chapters/chapter10/' }
+      { text: '第8章 VPS服务器入门', link: '/chapters/chapter08/' },
+      { text: '第9章 Linux服务器基础', link: '/chapters/chapter09/' },
+      { text: '第10章 Docker容器技术', link: '/chapters/chapter10/' }
     ]
   },
   {
-    text: '🛠️ 实战进阶',
+    text: '🛠️ 个人数字基础设施',
     collapsed: false,
     items: [
-      { text: '第11章 综合实战', link: '/chapters/chapter11/' },
-      { text: '第12章 运维维护', link: '/chapters/chapter12/' },
-      { text: '第13章 Cloudflare + VPS', link: '/chapters/chapter13/' },
-      { text: '第14章 Cloudflare + NAS', link: '/chapters/chapter14/' }
+      { text: '第11章 Cloudflare + VPS 实战', link: '/chapters/chapter11/' },
+      { text: '第12章 Cloudflare Tunnel', link: '/chapters/chapter12/' },
+      { text: '第13章 NAS个人云', link: '/chapters/chapter13/' },
+      { text: '第14章 家庭服务器', link: '/chapters/chapter14/' }
     ]
   },
   {
-    text: '🏢 企业与实践',
+    text: '🏆 高级应用',
     collapsed: false,
     items: [
-      { text: '第15章 企业级安全实践', link: '/chapters/chapter15/' },
+      { text: '第15章 Zero Trust安全体系', link: '/chapters/chapter15/' },
       { text: '第16章 API自动化运维', link: '/chapters/chapter16/' },
       { text: '第17章 综合项目实战', link: '/chapters/chapter17/' }
     ]
@@ -93,10 +93,11 @@ export default defineConfig({
     // 网站导航
     nav: [
       { text: '首页', link: '/' },
-      { text: '课程', link: '/chapters/' },
-      { text: '实验', link: '/experiments/' },
-      { text: '项目', link: '/projects/' },
-      { text: '资源', link: '/resources/' }
+      { text: '课程路线', link: '/chapters/' },
+      { text: '章节目录', link: '/chapters/chapter00/' },
+      { text: '实验环境', link: '/experiments/' },
+      { text: '工具箱', link: '/resources/' },
+      { text: '关于课程', link: '/about/' }
     ],
 
     // 侧边栏

@@ -14,6 +14,7 @@ import CourseRoadmap from './components/CourseRoadmap.vue'
 import ProjectShowcase from './components/ProjectShowcase.vue'
 import LearningEnvironment from './components/LearningEnvironment.vue'
 import FooterSection from './components/FooterSection.vue'
+import CourseEntrance from './components/CourseEntrance.vue'
 
 // ===== 章节页面组件 =====
 import ChapterHeader from './components/ChapterHeader.vue'
@@ -43,6 +44,7 @@ export default {
     app.component('ProjectShowcase', ProjectShowcase)
     app.component('LearningEnvironment', LearningEnvironment)
     app.component('FooterSection', FooterSection)
+    app.component('CourseEntrance', CourseEntrance)
 
     // 章节页面组件
     app.component('ChapterHeader', ChapterHeader)

@@ -1,43 +1,82 @@
-# 课程目录
+---
+title: 课程路线 - 人人都能学会的互联网基础设施
+description: 《人人都能学会的互联网基础设施》完整学习路线与五个阶段规划，从认识互联网到高级实战，循序渐进掌握域名、DNS、Cloudflare、VPS、NAS 与自动化运维。
+---
 
-欢迎来到《人人都能学会的互联网基础设施》课程！
+# 课程路线
 
-本课程共 18 章，从零基础开始，循序渐进地带你掌握互联网基础设施的核心知识。
+欢迎来到《人人都能学会的互联网基础设施》！
 
-## 学习阶段
+这是一套面向**普通用户、技术爱好者和小型团队**的系统性在线课程。我们不假设你有计算机专业背景，而是从最基础的概念讲起，逐步带你掌握现代互联网基础设施的核心能力。
 
-### 🚀 入门阶段
+## 课程介绍
+
+互联网已经成为和水、电一样的基础设施。我们每天都在使用它，但大多数人并不了解它如何运作。本课程的目标是让你拥有"驾驶"而不是"只会乘坐"互联网的能力：
+
+- **理解互联网如何运作** —— 当你在浏览器输入网址并按下回车，背后到底发生了什么？
+- **掌握 Cloudflare 这个超级平台** —— 全球最大的互联网基础设施平台之一，并且提供慷慨的免费套餐。
+- **构建属于自己的数字世界** —— 从个人网站、家庭私有云到安全的远程访问。
+- **拥有独立解决问题的能力** —— 遇到网络问题时，不再只是"重启路由器"。
+
+## 学习路线
+
+本课程共 **18 章**（第0章至第17章），按知识领域与学习难度分为**五个阶段**，循序渐进：
+
+| 阶段 | 主题 | 章节 |
+|------|------|------|
+| 第一阶段 | 认识互联网 | 第0章 – 第3章 |
+| 第二阶段 | 互联网基础设施核心 | 第4章 – 第7章 |
+| 第三阶段 | 服务器与云计算 | 第8章 – 第10章 |
+| 第四阶段 | 个人数字基础设施 | 第11章 – 第14章 |
+| 第五阶段 | 高级应用 | 第15章 – 第17章 |
+
+> 💡 建议按照章节顺序学习，每一章的知识都是后续章节的基础。每章都包含「本章目标」「章节介绍」「核心知识」「实战练习」「本章总结」与「下一章预告」。
+
+## 五个学习阶段
+
+### 🚀 第一阶段：认识互联网
+
+建立对互联网的整体认知，理解浏览器打开网页的全过程，以及家庭网络和域名 / DNS 的基础。
 
 - [第0章 学习路线与课程介绍](/chapters/chapter00/)
-- [第1章 认识Cloudflare](/chapters/chapter01/)
-- [第2章 互联网基础知识](/chapters/chapter02/)
-- [第3章 注册Cloudflare并接入域名](/chapters/chapter03/)
+- [第1章 互联网到底是什么？](/chapters/chapter01/)
+- [第2章 家庭网络基础](/chapters/chapter02/)
+- [第3章 域名与DNS](/chapters/chapter03/)
 
-### 🔧 核心阶段
+### ⚡ 第二阶段：互联网基础设施核心
 
-- [第4章 Cloudflare DNS教程](/chapters/chapter04/)
-- [第5章 Cloudflare SSL/TLS教程](/chapters/chapter05/)
-- [第6章 Cloudflare CDN教程](/chapters/chapter06/)
+深入学习 Cloudflare 四大核心能力：基础概念、SSL/TLS 安全通信、CDN 全球加速与网站安全防护。
+
+- [第4章 Cloudflare基础](/chapters/chapter04/)
+- [第5章 SSL/TLS安全通信](/chapters/chapter05/)
+- [第6章 CDN全球加速](/chapters/chapter06/)
 - [第7章 网站安全防护](/chapters/chapter07/)
 
-### 🏗️ 进阶阶段
+### ☁️ 第三阶段：服务器与云计算
 
-- [第8章 Cloudflare Zero Trust](/chapters/chapter08/)
-- [第9章 Workers与Pages](/chapters/chapter09/)
-- [第10章 R2、D1与个人云](/chapters/chapter10/)
+进入服务器世界：从 VPS 选购、Linux 基础命令到 Docker 容器技术，掌握属于自己的计算资源。
 
-### 🎯 实战阶段
+- [第8章 VPS服务器入门](/chapters/chapter08/)
+- [第9章 Linux服务器基础](/chapters/chapter09/)
+- [第10章 Docker容器技术](/chapters/chapter10/)
 
-- [第11章 综合实战](/chapters/chapter11/)
-- [第12章 运维维护](/chapters/chapter12/)
-- [第13章 Cloudflare + VPS](/chapters/chapter13/)
-- [第14章 Cloudflare + NAS](/chapters/chapter14/)
-- [第15章 企业级安全实践](/chapters/chapter15/)
+### 🛠️ 第四阶段：个人数字基础设施
+
+把云服务落地为个人数字生活：Cloudflare + VPS 实战、Cloudflare Tunnel、NAS 个人云与家庭服务器。
+
+- [第11章 Cloudflare + VPS 实战](/chapters/chapter11/)
+- [第12章 Cloudflare Tunnel](/chapters/chapter12/)
+- [第13章 NAS个人云](/chapters/chapter13/)
+- [第14章 家庭服务器](/chapters/chapter14/)
+
+### 🏆 第五阶段：高级应用
+
+面向进阶需求：Zero Trust 安全体系、API 自动化运维，以及整合全部知识的综合项目实战。
+
+- [第15章 Zero Trust安全体系](/chapters/chapter15/)
 - [第16章 API自动化运维](/chapters/chapter16/)
 - [第17章 综合项目实战](/chapters/chapter17/)
 
 ---
 
-> 💡 建议按照章节顺序学习，每一章的知识都是后续章节的基础。
-
-<!-- fix cloudflare build -->
+准备好开始了吗？👉 [从第0章 学习路线与课程介绍开始学习](/chapters/chapter00/)
