@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 // 课程侧边栏配置 —— 分组折叠式
+// 注意：sidebar 标题必须与各章节 H1 完全一致（章节编号两位数字）
 const chaptersSidebar = [
   {
     text: '🚀 认识互联网',
@@ -16,38 +17,38 @@ const chaptersSidebar = [
     text: '⚡ 互联网基础设施核心',
     collapsed: false,
     items: [
-      { text: '第04章 Cloudflare基础', link: '/chapters/chapter04/' },
-      { text: '第05章 SSL/TLS安全通信', link: '/chapters/chapter05/' },
-      { text: '第06章 CDN全球加速', link: '/chapters/chapter06/' },
-      { text: '第07章 网站安全防护', link: '/chapters/chapter07/' }
+      { text: '第04章 Cloudflare DNS 实战', link: '/chapters/chapter04/' },
+      { text: '第05章 服务器与云计算基础', link: '/chapters/chapter05/' },
+      { text: '第06章 TCP/IP 与互联网通信原理', link: '/chapters/chapter06/' },
+      { text: '第07章 网络安全基础与加密原理', link: '/chapters/chapter07/' }
     ]
   },
   {
     text: '☁️ 服务器与云计算',
     collapsed: false,
     items: [
-      { text: '第08章 VPS服务器入门', link: '/chapters/chapter08/' },
-      { text: '第09章 Linux服务器基础', link: '/chapters/chapter09/' },
-      { text: '第10章 Docker容器技术', link: '/chapters/chapter10/' }
+      { text: '第08章 VPN、代理与互联网访问原理', link: '/chapters/chapter08/' },
+      { text: '第09章 Cloudflare 深入理解：CDN、安全与全球网络入口', link: '/chapters/chapter09/' },
+      { text: '第10章 VPS、Linux 与现代互联网服务架构', link: '/chapters/chapter10/' }
     ]
   },
   {
     text: '🛠️ 个人数字基础设施',
     collapsed: false,
     items: [
-      { text: '第11章 Cloudflare + VPS 实战', link: '/chapters/chapter11/' },
-      { text: '第12章 Cloudflare Tunnel', link: '/chapters/chapter12/' },
-      { text: '第13章 NAS个人云', link: '/chapters/chapter13/' },
-      { text: '第14章 家庭服务器', link: '/chapters/chapter14/' }
+      { text: '第11章 家庭服务器、NAS 与个人数字基础设施', link: '/chapters/chapter11/' },
+      { text: '第12章 IPv6、公网访问与现代网络连接', link: '/chapters/chapter12/' },
+      { text: '第13章 网络安全基础与个人安全体系', link: '/chapters/chapter13/' },
+      { text: '第14章 AI时代的个人数字基础设施', link: '/chapters/chapter14/' }
     ]
   },
   {
     text: '🏆 高级应用',
     collapsed: false,
     items: [
-      { text: '第15章 Zero Trust安全体系', link: '/chapters/chapter15/' },
-      { text: '第16章 API自动化运维', link: '/chapters/chapter16/' },
-      { text: '第17章 综合项目实战', link: '/chapters/chapter17/' }
+      { text: '第15章 综合实践：构建个人互联网基础设施', link: '/chapters/chapter15/' },
+      { text: '第16章 个人数字基础设施实战部署', link: '/chapters/chapter16/' },
+      { text: '第17章 未来互联网与个人数字主权', link: '/chapters/chapter17/' }
     ]
   }
 ]

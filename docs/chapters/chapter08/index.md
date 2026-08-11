@@ -396,9 +396,9 @@ V2Ray / Xray 包含几个核心模块：
 
 ## 下一章预告
 
-👉 前往 [第09章 Cloudflare 深入应用与网络安全基础](/chapters/chapter09/)
+👉 前往 [第09章 Cloudflare 深入理解：CDN、安全与全球网络入口](/chapters/chapter09/)
 
-下一章标题：**第09章 Cloudflare 深入应用与网络安全基础**
+下一章标题：**第09章 Cloudflare 深入理解：CDN、安全与全球网络入口**
 
 预告内容：
 
