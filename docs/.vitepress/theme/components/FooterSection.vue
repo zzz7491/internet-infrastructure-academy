@@ -6,43 +6,32 @@
         <div class="footer-brand">
           <h3 class="brand-name">互联网基础设施学院</h3>
           <p class="brand-tagline">
-            从域名、DNS、Cloudflare开始，<br/>
-            构建属于自己的数字世界。
+            从理解互联网，到建立自己的数字空间。<br/>
+            一套面向普通人的网络、安全、服务器、数据与 AI 基础课程。
           </p>
         </div>
 
         <!-- 课程导航 -->
         <div class="footer-col">
-          <h4 class="footer-title">课程导航</h4>
+          <h4 class="footer-title">开始学习</h4>
           <ul class="footer-links">
-            <li><a href="/chapters/chapter00/">课程介绍</a></li>
-            <li><a href="/chapters/chapter02/">互联网基础</a></li>
-            <li><a href="/chapters/chapter01/">Cloudflare入门</a></li>
-            <li><a href="/chapters/chapter08/">Zero Trust</a></li>
-            <li><a href="/chapters/">查看全部课程 →</a></li>
+            <li><a href="/chapters/chapter00/">第 00 章 · 课程介绍</a></li>
+            <li><a href="/chapters/chapter01/">第 01 章 · 全景认识</a></li>
+            <li><a href="/chapters/chapter03/">第 03 章 · 域名与 DNS</a></li>
+            <li><a href="/chapters/chapter11/">第 11 章 · NAS 与数据</a></li>
+            <li><a href="/chapters/chapter17/">第 17 章 · 数字主权</a></li>
           </ul>
         </div>
 
-        <!-- 实验中心 -->
+        <!-- 课程路线 -->
         <div class="footer-col">
-          <h4 class="footer-title">实验中心</h4>
+          <h4 class="footer-title">课程路线</h4>
           <ul class="footer-links">
-            <li><a href="/experiments/">全部实验</a></li>
-            <li><a href="/chapters/chapter04/">DNS实验</a></li>
-            <li><a href="/chapters/chapter06/">CDN实验</a></li>
-            <li><a href="/chapters/chapter09/">Workers实验</a></li>
-            <li><a href="/chapters/chapter17/">综合项目</a></li>
-          </ul>
-        </div>
-
-        <!-- 项目案例 -->
-        <div class="footer-col">
-          <h4 class="footer-title">项目案例</h4>
-          <ul class="footer-links">
-            <li><a href="/projects/">全部项目</a></li>
-            <li><a href="/resources/">学习资源</a></li>
-            <li><a href="/chapters/chapter11/">综合实战</a></li>
-            <li><a href="/chapters/chapter17/">最终项目</a></li>
+            <li><a href="/chapters/">查看全部 18 章</a></li>
+            <li><a href="/chapters/chapter04/">入口与连接</a></li>
+            <li><a href="/chapters/chapter09/">全球网络入口</a></li>
+            <li><a href="/chapters/chapter14/">AI 与数据</a></li>
+            <li><a href="/chapters/chapter16/">实战部署</a></li>
           </ul>
         </div>
       </div>
@@ -50,12 +39,12 @@
       <!-- 版权 -->
       <div class="footer-bottom">
         <div class="footer-copyright">
-          <span>© 2026 Internet Infrastructure Academy</span>
+          <span>© 2026 互联网基础设施学院</span>
           <span class="footer-dot">·</span>
           <span>人人都能学会的互联网基础设施</span>
         </div>
         <div class="footer-built">
-          基于 VitePress 构建 · 部署于 Cloudflare Pages
+          基于 VitePress 构建 · 以统一世界观讲解互联网基础设施
         </div>
       </div>
     </div>
@@ -77,7 +66,7 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr 1fr;
   gap: 48px;
   margin-bottom: 48px;
 }

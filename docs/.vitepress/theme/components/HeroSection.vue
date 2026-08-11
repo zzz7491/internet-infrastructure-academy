@@ -2,11 +2,9 @@
   <section class="hero-section">
     <!-- 动态网络节点背景 -->
     <div class="hero-bg">
-      <img src="/images/hero-network.png" alt="" class="hero-bg-img" />
       <canvas ref="networkCanvas" class="network-canvas"></canvas>
       <div class="bg-gradient"></div>
       <div class="bg-grid"></div>
-      <div class="watermark-mask"></div>
       <div class="hero-overlay"></div>
     </div>
 
@@ -23,13 +21,12 @@
       </h1>
 
       <p class="hero-subtitle">
-        从域名、DNS、Cloudflare开始，<br/>
-        理解互联网如何运行，<br/>
-        构建属于自己的数字世界。
+        从理解互联网，到建立自己的数字空间。<br/>
+        一套面向普通人的网络、安全、服务器、数据与 AI 基础课程。
       </p>
 
       <p class="hero-desc">
-        面向普通用户、技术爱好者和小型企业的互联网基础设施学习体系
+        帮助每一个普通人看懂互联网如何运行、自己的数据在哪里、如何拥有属于自己的数字空间。
       </p>
 
       <div class="hero-actions">
@@ -37,41 +34,41 @@
           开始学习
           <span class="btn-arrow">→</span>
         </a>
-        <a href="/chapters/" class="btn-secondary">
+        <a href="#roadmap" class="btn-secondary">
           查看课程路线
         </a>
       </div>
 
-      <!-- 底部连接示意 -->
+      <!-- 底部连接示意（统一比喻体系，不使用具体产品名称） -->
       <div class="hero-chain">
         <div class="chain-node">
-          <div class="chain-icon">🖥️</div>
+          <div class="chain-icon">📱</div>
           <span>用户设备</span>
         </div>
         <div class="chain-line"></div>
         <div class="chain-node">
-          <div class="chain-icon">🌐</div>
-          <span>域名/DNS</span>
+          <div class="chain-icon">🏷️</div>
+          <span>域名导航</span>
         </div>
         <div class="chain-line"></div>
         <div class="chain-node">
-          <div class="chain-icon">🛡️</div>
-          <span>Cloudflare</span>
-        </div>
-        <div class="chain-line"></div>
-        <div class="chain-node">
-          <div class="chain-icon">☁️</div>
-          <span>VPS/云</span>
+          <div class="chain-icon">🏢</div>
+          <span>物业管理中心</span>
         </div>
         <div class="chain-line"></div>
         <div class="chain-node">
           <div class="chain-icon">🏠</div>
-          <span>NAS</span>
+          <span>服务器</span>
+        </div>
+        <div class="chain-line"></div>
+        <div class="chain-node">
+          <div class="chain-icon">📦</div>
+          <span>个人仓库</span>
         </div>
         <div class="chain-line"></div>
         <div class="chain-node">
           <div class="chain-icon">🤖</div>
-          <span>AI服务</span>
+          <span>AI 助手</span>
         </div>
       </div>
     </div>
@@ -144,13 +141,7 @@ function initNetworkCanvas() {
     for (const node of nodes) {
       ctx.beginPath()
       ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(59, 130, 246, ${node.opacity})`
-      ctx.fill()
-
-      // 光晕
-      ctx.beginPath()
-      ctx.arc(node.x, node.y, node.r * 2.5, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(96, 165, 250, ${node.opacity * 0.15})`
+      ctx.fillStyle = `rgba(246, 130, 31, ${node.opacity})`
       ctx.fill()
     }
 
@@ -173,7 +164,7 @@ function initNetworkCanvas() {
 <style scoped>
 .hero-section {
   position: relative;
-  min-height: 700px;
+  min-height: 720px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,24 +189,13 @@ function initNetworkCanvas() {
   height: 100%;
 }
 
-.hero-bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: var(--home-hero-img-opacity);
-  z-index: 1;
-  transition: opacity 0.3s ease;
-}
-
 .bg-gradient {
   position: absolute;
   inset: 0;
   z-index: 2;
   background:
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(246, 130, 31, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(246, 130, 31, 0.05) 0%, transparent 50%),
     radial-gradient(ellipse 50% 40% at 20% 80%, rgba(246, 130, 31, 0.04) 0%, transparent 50%);
 }
 
@@ -228,14 +208,6 @@ function initNetworkCanvas() {
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 70%);
-}
-
-.watermark-mask {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  background: radial-gradient(circle at 96% 96%, var(--home-hero-bg) 0%, transparent 28%);
-  pointer-events: none;
 }
 
 .hero-overlay {
@@ -252,7 +224,7 @@ function initNetworkCanvas() {
   position: relative;
   z-index: 4;
   text-align: center;
-  padding: 80px 24px 60px;
+  padding: 90px 24px 70px;
   max-width: 900px;
   width: 100%;
 }
@@ -413,7 +385,7 @@ function initNetworkCanvas() {
 .chain-line {
   width: 30px;
   height: 1px;
-  background: linear-gradient(90deg, rgba(246, 130, 31, 0.4), rgba(59, 130, 246, 0.4));
+  background: linear-gradient(90deg, rgba(246, 130, 31, 0.4), rgba(246, 130, 31, 0.1));
   margin: 0 4px;
 }
 
@@ -448,7 +420,7 @@ function initNetworkCanvas() {
 /* ===== 响应式 ===== */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 600px;
+    min-height: 620px;
   }
 
   .hero-title {

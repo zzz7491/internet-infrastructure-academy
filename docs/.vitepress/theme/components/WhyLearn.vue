@@ -5,36 +5,44 @@
         <!-- 左侧文字 -->
         <div class="why-learn-text" ref="textRef">
           <h2 class="section-title">
-            为什么需要学习<br/>
-            <span class="highlight">互联网基础设施？</span>
+            互联网已经成为<br/>
+            <span class="highlight">现代生活基础设施</span>
           </h2>
-          <p class="section-intro">
-            互联网已经成为基础设施，<br/>
-            但是很多人不知道：
-          </p>
+
+          <p class="section-intro">我们每天都在使用互联网：</p>
+          <ul class="daily-list">
+            <li v-for="(item, i) in daily" :key="'d' + i">
+              <span class="d-icon">{{ item.icon }}</span>
+              <span>{{ item.text }}</span>
+            </li>
+          </ul>
+
+          <p class="section-intro question-lead">但很多人并不清楚：</p>
           <ul class="question-list">
-            <li v-for="(q, i) in questions" :key="i" :style="{ animationDelay: `${0.3 + i * 0.12}s` }">
+            <li v-for="(q, i) in questions" :key="'q' + i" :style="{ animationDelay: `${0.2 + i * 0.1}s` }">
               <span class="q-icon">?</span>
               <span>{{ q }}</span>
             </li>
           </ul>
+
           <p class="section-conclusion">
-            理解互联网基础设施不是程序员的专利，<br/>
-            它是数字时代的<span class="em">基本素养</span>。
+            理解互联网基础设施，不是为了成为工程师。<br/>
+            而是为了成为<span class="em">自己数字生活的管理者</span>。
           </p>
         </div>
 
-        <!-- 右侧插图 -->
+        <!-- 右侧插图：互联网在你背后运转着 -->
         <div class="why-learn-visual" ref="visualRef">
           <div class="visual-card">
-            <div class="visual-layer layer-app">📱 应用层</div>
+            <div class="visual-layer layer-app">📱 应用与服务</div>
             <div class="visual-arrow">↑↓</div>
-            <div class="visual-layer layer-cf">🛡️ Cloudflare 安全层</div>
+            <div class="visual-layer layer-cf">🛡️ 安全与身份</div>
             <div class="visual-arrow">↑↓</div>
-            <div class="visual-layer layer-net">🌐 网络传输层</div>
+            <div class="visual-layer layer-net">🌐 网络与传输</div>
             <div class="visual-arrow">↑↓</div>
-            <div class="visual-layer layer-infra">🖥️ 基础设施层</div>
+            <div class="visual-layer layer-infra">🏠 基础设施</div>
           </div>
+          <p class="visual-caption">你在前台使用，它在后台运转</p>
         </div>
       </div>
     </div>
@@ -47,11 +55,20 @@ import { ref, onMounted } from 'vue'
 const textRef = ref(null)
 const visualRef = ref(null)
 
+const daily = [
+  { icon: '💬', text: '聊天沟通' },
+  { icon: '💳', text: '支付转账' },
+  { icon: '🛒', text: '网上购物' },
+  { icon: '🖼️', text: '存储照片' },
+  { icon: '🤖', text: '使用 AI' },
+  { icon: '🗂️', text: '管理工作' }
+]
+
 const questions = [
-  '域名如何找到服务器？',
-  '网页为什么可以打开？',
-  '数据如何安全传输？',
-  '网站如何抵御攻击？'
+  '数据在传输过程中经过了哪里？',
+  '我的账号到底由谁在控制？',
+  '信息是如何在网络中传输的？',
+  '我自己的数字资产究竟在哪里？'
 ]
 
 onMounted(() => {
@@ -125,31 +142,52 @@ onMounted(() => {
   font-size: 17px;
   color: var(--home-text-secondary);
   line-height: 1.7;
-  margin: 0 0 24px;
+  margin: 0 0 16px;
+  font-weight: 600;
 }
 
+.question-lead {
+  margin-top: 28px;
+}
+
+.daily-list,
 .question-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 32px;
+  margin: 0 0 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
+.daily-list li,
 .question-list li {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 14px 18px;
+  padding: 12px 18px;
   background: var(--home-card-bg);
   border: 1px solid var(--home-border);
   border-radius: 10px;
   color: var(--home-text-secondary);
   font-size: 15px;
+}
+
+.daily-list li {
   opacity: 0;
   transform: translateX(-20px);
   animation: slideIn 0.6s ease-out forwards;
+}
+
+.question-list li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.d-icon {
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
 .q-icon {
@@ -170,7 +208,7 @@ onMounted(() => {
   font-size: 16px;
   color: var(--home-text-secondary);
   line-height: 1.7;
-  margin: 0;
+  margin: 8px 0 0;
 }
 
 .em {
@@ -181,7 +219,9 @@ onMounted(() => {
 /* ===== 右侧插图 ===== */
 .why-learn-visual {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .visual-card {
@@ -212,21 +252,21 @@ onMounted(() => {
 }
 
 .layer-app {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.1));
-  color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.layer-cf {
   background: linear-gradient(135deg, rgba(246, 130, 31, 0.2), rgba(251, 146, 60, 0.1));
   color: #f6821f;
   border: 1px solid rgba(246, 130, 31, 0.3);
 }
 
-.layer-net {
+.layer-cf {
   background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(192, 132, 252, 0.1));
   color: #c084fc;
   border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.layer-net {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.1));
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .layer-infra {
@@ -239,6 +279,12 @@ onMounted(() => {
   color: var(--home-text-muted);
   font-size: 18px;
   padding: 4px 0;
+}
+
+.visual-caption {
+  font-size: 13px;
+  color: var(--home-text-muted);
+  margin: 0;
 }
 
 /* ===== 动画 ===== */

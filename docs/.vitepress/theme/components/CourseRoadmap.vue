@@ -1,11 +1,11 @@
 <template>
-  <section class="roadmap-section">
+  <section class="roadmap-section" id="roadmap">
     <div class="section-container">
       <div class="section-header" ref="headerRef">
         <h2 class="section-title">
-          18章课程 · <span class="highlight">系统学习路线</span>
+          18 章完整<span class="highlight">学习路线</span>
         </h2>
-        <p class="section-subtitle">从零基础到企业级实战，五个阶段循序渐进</p>
+        <p class="section-subtitle">从认识互联网，到掌握个人数字主权，四个阶段循序渐进</p>
       </div>
 
       <div class="roadmap-timeline" ref="timelineRef">
@@ -24,22 +24,12 @@
             <div class="phase-info">
               <span class="phase-label">{{ phase.label }}</span>
               <h3 class="phase-title">{{ phase.title }}</h3>
+              <span class="phase-range">{{ phase.range }}</span>
             </div>
           </div>
 
-          <!-- 章节列表 -->
-          <div class="phase-chapters">
-            <a
-              v-for="(ch, ci) in phase.chapters"
-              :key="ci"
-              :href="ch.link"
-              class="chapter-item"
-            >
-              <span class="ch-num">{{ ch.num }}</span>
-              <span class="ch-name">{{ ch.name }}</span>
-              <span class="ch-arrow">→</span>
-            </a>
-          </div>
+          <!-- 阶段说明 -->
+          <p class="phase-desc">{{ phase.desc }}</p>
         </div>
       </div>
     </div>
@@ -55,51 +45,27 @@ const timelineRef = ref(null)
 const phases = [
   {
     label: '第一阶段',
-    title: '互联网基础',
-    chapters: [
-      { num: '第0章', name: '学习路线与课程介绍', link: '/chapters/chapter00/' },
-      { num: '第1章', name: '认识Cloudflare', link: '/chapters/chapter01/' },
-      { num: '第2章', name: '互联网基础知识', link: '/chapters/chapter02/' }
-    ]
+    title: '认识互联网',
+    range: '第00章 – 第03章',
+    desc: '认识互联网是什么，理解地址、网络和连接，建立最基础的整体认知。'
   },
   {
     label: '第二阶段',
-    title: 'Cloudflare 核心',
-    chapters: [
-      { num: '第3章', name: '注册Cloudflare并接入域名', link: '/chapters/chapter03/' },
-      { num: '第4章', name: 'Cloudflare DNS教程', link: '/chapters/chapter04/' },
-      { num: '第5章', name: 'Cloudflare SSL/TLS教程', link: '/chapters/chapter05/' },
-      { num: '第6章', name: 'Cloudflare CDN教程', link: '/chapters/chapter06/' },
-      { num: '第7章', name: '网站安全防护', link: '/chapters/chapter07/' }
-    ]
+    title: '理解互联网核心技术',
+    range: '第04章 – 第08章',
+    desc: '理解 DNS、服务器、通信协议、安全与访问路径，看清网站访问背后的完整过程。'
   },
   {
     label: '第三阶段',
-    title: '云服务与边缘计算',
-    chapters: [
-      { num: '第8章', name: 'Cloudflare Zero Trust', link: '/chapters/chapter08/' },
-      { num: '第9章', name: 'Workers与Pages', link: '/chapters/chapter09/' },
-      { num: '第10章', name: 'R2、D1与个人云', link: '/chapters/chapter10/' }
-    ]
+    title: '建立个人数字基础设施',
+    range: '第09章 – 第13章',
+    desc: '理解入口、计算、数据、连接与安全体系，开始构建属于自己的数字空间。'
   },
   {
     label: '第四阶段',
-    title: '高级实战',
-    chapters: [
-      { num: '第11章', name: '综合实战', link: '/chapters/chapter11/' },
-      { num: '第12章', name: '运维维护', link: '/chapters/chapter12/' },
-      { num: '第13章', name: 'Cloudflare + VPS', link: '/chapters/chapter13/' },
-      { num: '第14章', name: 'Cloudflare + NAS', link: '/chapters/chapter14/' }
-    ]
-  },
-  {
-    label: '第五阶段',
-    title: '企业与自动化',
-    chapters: [
-      { num: '第15章', name: '企业级安全实践', link: '/chapters/chapter15/' },
-      { num: '第16章', name: 'API自动化运维', link: '/chapters/chapter16/' },
-      { num: '第17章', name: '综合项目实战', link: '/chapters/chapter17/' }
-    ]
+    title: '进入 AI 与数字主权时代',
+    range: '第14章 – 第17章',
+    desc: '理解 AI 时代个人数字空间的发展方向，掌握自己的数据、知识与主动权。'
   }
 ]
 
@@ -125,9 +91,10 @@ onMounted(() => {
 <style scoped>
 .roadmap-section {
   padding: 100px 24px;
-  background: var(--home-section-even);
+  background: var(--home-section-odd);
   position: relative;
   transition: background 0.3s ease;
+  scroll-margin-top: 80px;
 }
 
 .section-container {
@@ -191,9 +158,8 @@ onMounted(() => {
   width: 2px;
   background: linear-gradient(
     180deg,
-    rgba(59, 130, 246, 0.4),
-    rgba(59, 130, 246, 0.2) 30%,
-    rgba(246, 130, 31, 0.3) 60%,
+    rgba(246, 130, 31, 0.4),
+    rgba(246, 130, 31, 0.2) 50%,
     rgba(34, 197, 94, 0.3) 100%
   );
 }
@@ -205,18 +171,21 @@ onMounted(() => {
   animation: fadeSlideIn 0.6s ease-out both;
 }
 
+.phase-block:last-child {
+  margin-bottom: 0;
+}
+
 .phase-block:nth-child(2)  { animation-delay: 0.1s; }
 .phase-block:nth-child(3)  { animation-delay: 0.2s; }
 .phase-block:nth-child(4)  { animation-delay: 0.3s; }
 .phase-block:nth-child(5)  { animation-delay: 0.4s; }
-.phase-block:nth-child(6)  { animation-delay: 0.5s; }
 
 /* 阶段头部 */
 .phase-header {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .phase-dot {
@@ -225,11 +194,11 @@ onMounted(() => {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  background: linear-gradient(135deg, #f6821f, #fb923c);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 20px rgba(246, 130, 31, 0.3);
   z-index: 1;
 }
 
@@ -242,15 +211,14 @@ onMounted(() => {
 .phase-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .phase-label {
   font-size: 12px;
-  color: rgba(59, 130, 246, 0.7);
+  color: rgba(246, 130, 31, 0.75);
   font-weight: 600;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .phase-title {
@@ -260,57 +228,17 @@ onMounted(() => {
   margin: 0;
 }
 
-/* 章节列表 */
-.phase-chapters {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  margin-top: 12px;
-}
-
-.chapter-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  border: 1px solid transparent;
-}
-
-.chapter-item:hover {
-  background: var(--home-card-bg);
-  border-color: var(--home-border);
-}
-
-.ch-num {
+.phase-range {
   font-size: 13px;
-  font-weight: 600;
-  color: rgba(246, 130, 31, 0.7);
-  min-width: 42px;
+  color: var(--home-text-muted);
 }
 
-.ch-name {
-  flex: 1;
+.phase-desc {
   font-size: 15px;
   color: var(--home-text-secondary);
-  transition: color 0.25s ease;
-}
-
-.chapter-item:hover .ch-name {
-  color: var(--home-text-primary);
-}
-
-.ch-arrow {
-  font-size: 14px;
-  color: var(--home-text-muted);
-  transition: all 0.25s ease;
-}
-
-.chapter-item:hover .ch-arrow {
-  color: var(--vp-c-brand-1);
-  transform: translateX(4px);
+  line-height: 1.7;
+  margin: 0;
+  padding-left: 0;
 }
 
 /* ===== 动画 ===== */

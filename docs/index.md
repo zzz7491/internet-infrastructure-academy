@@ -6,16 +6,16 @@ layout: home
 
 <WhyLearn />
 
-<CourseEntrance />
-
 <FeatureCards />
-
-<KnowledgeSystem />
 
 <CourseRoadmap />
 
+<LearningEnvironment />
+
+<KnowledgeSystem />
+
 <ProjectShowcase />
 
-<LearningEnvironment />
+<CourseEntrance />
 
 <FooterSection />

@@ -1,33 +1,24 @@
 <template>
-  <section class="env-section">
+  <section class="capabilities-section">
     <div class="section-container">
       <div class="section-header" ref="headerRef">
         <h2 class="section-title">
-          你需要<span class="highlight">什么？</span>
+          完成学习后，<span class="highlight">你能够：</span>
         </h2>
         <p class="section-subtitle">
-          循序渐进，从一台电脑开始，逐步扩展你的学习环境
+          这不是一套考证课程，而是一组可以长期使用的数字时代基础能力。
         </p>
       </div>
 
-      <div class="env-levels" ref="levelsRef">
+      <div class="capabilities-grid" ref="gridRef">
         <div
-          v-for="(level, i) in levels"
+          v-for="(item, i) in capabilities"
           :key="i"
-          class="env-level"
+          class="capability-item"
+          :style="{ transitionDelay: `${i * 0.06}s` }"
         >
-          <div class="level-header">
-            <div class="level-badge" :class="`badge-${level.theme}`">
-              {{ level.label }}
-            </div>
-            <h3 class="level-title">{{ level.title }}</h3>
-          </div>
-          <ul class="level-items">
-            <li v-for="(item, ji) in level.items" :key="ji" class="level-item">
-              <span class="item-icon">{{ item.icon }}</span>
-              <span class="item-name">{{ item.name }}</span>
-            </li>
-          </ul>
+          <span class="cap-icon">✓</span>
+          <span class="cap-text">{{ item }}</span>
         </div>
       </div>
     </div>
@@ -38,39 +29,16 @@
 import { ref, onMounted } from 'vue'
 
 const headerRef = ref(null)
-const levelsRef = ref(null)
+const gridRef = ref(null)
 
-const levels = [
-  {
-    label: '基础',
-    title: '入门装备',
-    theme: 'blue',
-    items: [
-      { icon: '💻', name: '电脑（Windows/Mac/Linux均可）' },
-      { icon: '🌐', name: '浏览器（推荐Chrome或Edge）' },
-      { icon: '📡', name: '互联网连接' }
-    ]
-  },
-  {
-    label: '进阶',
-    title: '实践装备',
-    theme: 'orange',
-    items: [
-      { icon: '🔗', name: '一个域名（约¥70/年）' },
-      { icon: '🛡️', name: 'Cloudflare账号（免费）' },
-      { icon: '🖥️', name: '一台VPS（约¥35/月起）' }
-    ]
-  },
-  {
-    label: '高级',
-    title: '专家装备',
-    theme: 'green',
-    items: [
-      { icon: '🏠', name: 'NAS设备（约¥1500起）' },
-      { icon: '🐳', name: 'Docker环境' },
-      { icon: '📝', name: 'GitHub账号（免费）' }
-    ]
-  }
+const capabilities = [
+  '看懂互联网的整体架构',
+  '理解网站访问的全过程',
+  '理解 VPN、代理与安全边界',
+  '理解服务器和 NAS 的作用',
+  '理解个人数据资产的价值',
+  '设计自己的数字基础设施',
+  '面向 AI 时代管理自己的数字空间'
 ]
 
 onMounted(() => {
@@ -86,14 +54,14 @@ onMounted(() => {
   )
 
   if (headerRef.value) observer.observe(headerRef.value)
-  if (levelsRef.value) observer.observe(levelsRef.value)
+  if (gridRef.value) observer.observe(gridRef.value)
 
   return () => observer.disconnect()
 })
 </script>
 
 <style scoped>
-.env-section {
+.capabilities-section {
   padding: 100px 24px;
   background: var(--home-section-even);
   transition: background 0.3s ease;
@@ -138,125 +106,74 @@ onMounted(() => {
   margin: 0;
 }
 
-.env-levels {
+.capabilities-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out 0.2s;
 }
 
-.env-levels.visible {
+.capabilities-grid.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.env-level {
-  padding: 36px 28px;
-  background: var(--home-card-bg);
-  border: 1px solid var(--home-border);
-  border-radius: 16px;
-  transition: all 0.4s ease;
-}
-
-.env-level:hover {
-  background: var(--home-card-bg-hover);
-  transform: translateY(-4px);
-}
-
-.level-header {
-  margin-bottom: 24px;
-}
-
-.level-badge {
-  display: inline-block;
-  padding: 5px 14px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 6px;
-  margin-bottom: 12px;
-}
-
-.badge-blue {
-  background: rgba(59, 130, 246, 0.15);
-  color: #60a5fa;
-}
-
-.badge-orange {
-  background: rgba(246, 130, 31, 0.15);
-  color: #f6821f;
-}
-
-.badge-green {
-  background: rgba(34, 197, 94, 0.15);
-  color: #4ade80;
-}
-
-.level-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--home-text-primary);
-  margin: 0;
-}
-
-.level-items {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.level-item {
+.capability-item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 12px 16px;
-  background: var(--home-card-bg-hover);
-  border-radius: 10px;
+  gap: 16px;
+  padding: 22px 24px;
+  background: var(--home-card-bg);
+  border: 1px solid var(--home-border);
+  border-radius: 14px;
   transition: all 0.3s ease;
 }
 
-.level-item:hover {
-  background: var(--home-card-bg);
+.capability-item:hover {
+  background: var(--home-card-bg-hover);
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-4px);
 }
 
-.item-icon {
-  font-size: 20px;
+.cap-icon {
   flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.item-name {
-  font-size: 14px;
+.cap-text {
+  font-size: 17px;
   color: var(--home-text-secondary);
-  line-height: 1.4;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 /* ===== 响应式 ===== */
 @media (max-width: 768px) {
-  .env-section {
+  .capabilities-section {
     padding: 60px 20px;
   }
 
-  .env-levels {
+  .capabilities-grid {
     grid-template-columns: 1fr;
   }
 
   .section-title {
     font-size: 28px;
   }
-}
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .env-levels {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  .env-level {
-    padding: 24px 18px;
+  .cap-text {
+    font-size: 15px;
   }
 }
 </style>

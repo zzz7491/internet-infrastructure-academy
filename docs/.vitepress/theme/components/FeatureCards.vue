@@ -2,9 +2,9 @@
   <section class="features-section">
     <div class="section-container">
       <div class="section-header" ref="headerRef">
-        <h2 class="section-title">掌握<span class="highlight">四大核心能力</span></h2>
+        <h2 class="section-title">这门课程<span class="highlight">学习什么？</span></h2>
         <p class="section-subtitle">
-          从基础概念到动手实践，逐步构建你的互联网知识体系
+          四个模块，带你建立完整的互联网基础设施认知，从理解网络到拥有自己的数字空间。
         </p>
       </div>
 
@@ -15,11 +15,13 @@
           class="feature-card"
           :style="{ transitionDelay: `${i * 0.08}s` }"
         >
+          <div class="card-phase">模块 {{ i + 1 }}</div>
           <div class="card-icon-wrap">
             <span class="card-icon">{{ card.icon }}</span>
           </div>
           <h3 class="card-title">{{ card.title }}</h3>
           <p class="card-desc">{{ card.desc }}</p>
+          <div class="card-range">{{ card.range }}</div>
           <ul class="card-tags">
             <li v-for="tag in card.tags" :key="tag" class="tag">{{ tag }}</li>
           </ul>
@@ -39,26 +41,30 @@ const cards = [
   {
     icon: '🌐',
     title: '理解互联网',
-    desc: '从IP地址到域名系统，从HTTP到HTTPS，掌握互联网通信的基本原理。',
-    tags: ['IP', 'DNS', '域名', 'HTTP']
+    desc: '从家庭网络、DNS、IP、TCP/IP 开始，理解互联网如何把世界连接在一起。',
+    range: '对应 第00–06章',
+    tags: ['网络', '地址', '连接', '协议']
   },
   {
     icon: '🛡️',
-    title: '掌握Cloudflare',
-    desc: '全面学习Cloudflare核心产品，成为网络性能和安全专家。',
-    tags: ['DNS', 'CDN', 'SSL', 'WAF', 'Zero Trust']
-  },
-  {
-    icon: '☁️',
-    title: '构建自己的服务',
-    desc: '从VPS到容器化部署，学会搭建和运维自己的网络服务。',
-    tags: ['VPS', 'Linux', 'Docker', 'Nginx']
+    title: '理解安全',
+    desc: '理解加密、HTTPS、身份认证与安全体系，保护自己的数字生活。',
+    range: '对应 第07–09章',
+    tags: ['加密', 'HTTPS', '身份', '安全体系']
   },
   {
     icon: '🏠',
-    title: '打造个人云',
-    desc: '搭建家庭NAS、配置远程访问、构建AI知识库，拥有自己的数据主权。',
-    tags: ['NAS', 'Tunnel', 'R2', 'AI知识库']
+    title: '建立个人基础设施',
+    desc: '理解服务器、NAS、Docker 与远程连接，构建属于自己的数字空间。',
+    range: '对应 第10–13章',
+    tags: ['服务器', 'NAS', 'Docker', '远程连接']
+  },
+  {
+    icon: '🤖',
+    title: '面向 AI 时代',
+    desc: '理解 AI 基础设施、知识库、数字助手与个人数字主权。',
+    range: '对应 第14–17章',
+    tags: ['知识库', 'AI', '数字助手', '数字主权']
   }
 ]
 
@@ -87,16 +93,6 @@ onMounted(() => {
   background: var(--home-section-even);
   position: relative;
   transition: background 0.3s ease;
-}
-
-.features-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(59, 130, 246, 0.04), transparent),
-    radial-gradient(ellipse 50% 40% at 20% 100%, rgba(246, 130, 31, 0.03), transparent);
-  pointer-events: none;
 }
 
 .section-container {
@@ -187,6 +183,17 @@ onMounted(() => {
   opacity: 1;
 }
 
+.card-phase {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+
 .card-icon-wrap {
   width: 56px;
   height: 56px;
@@ -203,7 +210,7 @@ onMounted(() => {
 }
 
 .card-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--home-text-primary);
   margin: 0 0 12px;
@@ -213,7 +220,14 @@ onMounted(() => {
   font-size: 14px;
   color: var(--home-text-secondary);
   line-height: 1.6;
-  margin: 0 0 20px;
+  margin: 0 0 16px;
+}
+
+.card-range {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--home-text-muted);
+  margin-bottom: 16px;
 }
 
 .card-tags {
