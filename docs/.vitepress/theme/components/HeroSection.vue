@@ -34,8 +34,8 @@
           开始学习
           <span class="btn-arrow">→</span>
         </a>
-        <a href="#roadmap" class="btn-secondary">
-          查看课程路线
+        <a href="/guide/" class="btn-secondary">
+          学习路线指南
         </a>
       </div>
 

@@ -681,5 +681,16 @@ font-size:15px;
 
 }
 
+.vp-doc table {
+
+display:block;
+
+width:100%;
+
+overflow-x:auto;
+
+-webkit-overflow-scrolling:touch;
+
+}
 
 }

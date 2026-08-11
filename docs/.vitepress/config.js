@@ -56,20 +56,20 @@ const chaptersSidebar = [
 export default defineConfig({
   // SEO 配置
   title: '人人都能学会的互联网基础设施 - Internet Infrastructure Academy',
-  description: '从域名、DNS、Cloudflare到VPS、NAS、网络安全和自动化运维的完整学习平台。面向普通用户、技术爱好者和小型企业的互联网基础设施学习体系。',
+  description: '面向零基础读者的互联网基础设施认知课程：用通俗比喻讲清互联网如何运行、数据如何流动，帮你理解网络安全与AI基础设施原理，并建立属于自己的个人数字空间与数据资产。',
   lang: 'zh-CN',
   head: [
     [
       'meta',
       {
         name: 'keywords',
-        content: '互联网基础设施,Cloudflare教程,DNS,VPS,NAS,网络安全,Zero Trust,个人云,CDN,自动化运维,Terraform,Cloudflare Workers,边缘计算,SSL/TLS,Docker'
+        content: '互联网基础设施,网络原理,互联网通信,网络安全,VPN原理,代理原理,服务器基础,云计算,NAS,个人数字空间,个人数据资产,数字基础设施,AI基础设施,数字主权,Docker'
       }
     ],
     ['meta', { name: 'author', content: 'Internet Infrastructure Academy' }],
     ['meta', { name: 'theme-color', content: '#f6821f' }],
     ['meta', { property: 'og:title', content: '人人都能学会的互联网基础设施' }],
-    ['meta', { property: 'og:description', content: '从域名、DNS、Cloudflare到VPS、NAS、网络安全和自动化运维的完整学习平台。' }],
+    ['meta', { property: 'og:description', content: '面向零基础读者的互联网基础设施认知课程，帮你理解互联网运行方式、数据安全与AI基础设施，建立个人数字空间。' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
