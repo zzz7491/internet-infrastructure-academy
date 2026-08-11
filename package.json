@@ -1,0 +1,27 @@
+{
+  "name": "internet-infrastructure-academy",
+  "version": "1.0.0",
+  "description": "人人都能学会的互联网基础设施 - 从域名、DNS、Cloudflare到个人云和企业安全实践的互联网基础设施学习平台",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.4.0",
+    "vue": "^3.5.0"
+  },
+  "keywords": [
+    "internet-infrastructure",
+    "cloudflare",
+    "dns",
+    "vps",
+    "nas",
+    "cybersecurity",
+    "zero-trust",
+    "personal-cloud"
+  ],
+  "author": "",
+  "license": "MIT"
+}
