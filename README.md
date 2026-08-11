@@ -90,3 +90,4 @@ internet-infrastructure-academy/
 ## License
 
 MIT
+Build verified: 2026-08-11
