@@ -1,379 +1,481 @@
 /* ============================================
-   互联网基础设施学院 · 自定义主题样式
-   深色科技教材风格
+   互联网基础设施学院
+   自定义主题样式
+   支持白天 / 黑夜自动切换
    ============================================ */
 
-/* ===== 全局 CSS 变量 ===== */
+
+/* ===============================
+   品牌变量
+   =============================== */
+
 :root {
-  /* 品牌色 - Cloudflare 橙色 */
+
+  /* Cloudflare 橙色 */
   --vp-c-brand-1: #f6821f;
   --vp-c-brand-2: #fb923c;
   --vp-c-brand-3: #fdba74;
-  --vp-c-brand-soft: rgba(246, 130, 31, 0.14);
+  --vp-c-brand-soft: rgba(246,130,31,0.14);
 
-  /* 背景 */
+  /* 字体 */
+  --vp-font-family-base:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans SC",
+    sans-serif;
+}
+
+
+
+/* ===============================
+   深色模式
+   =============================== */
+
+.dark {
+
   --vp-c-bg: #0a0a0f;
   --vp-c-bg-alt: #0c0c14;
   --vp-c-bg-elv: #0e0e18;
   --vp-c-bg-soft: #111118;
 
-  /* 文字 */
-  --vp-c-text-1: rgba(255, 255, 255, 0.9);
-  --vp-c-text-2: rgba(255, 255, 255, 0.65);
-  --vp-c-text-3: rgba(255, 255, 255, 0.4);
 
-  /* 边框 */
-  --vp-c-border: rgba(255, 255, 255, 0.08);
-  --vp-c-divider: rgba(255, 255, 255, 0.06);
+  --vp-c-text-1:
+    rgba(255,255,255,0.92);
 
-  /* 阴影 */
-  --vp-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
-  --vp-shadow-2: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --vp-c-text-2:
+    rgba(255,255,255,0.68);
 
-  /* 字体 */
-  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif;
+  --vp-c-text-3:
+    rgba(255,255,255,0.45);
+
+
+  --vp-c-border:
+    rgba(255,255,255,0.08);
+
+  --vp-c-divider:
+    rgba(255,255,255,0.06);
+
+
+  --vp-shadow-1:
+    0 1px 2px rgba(0,0,0,.5);
+
+  --vp-shadow-2:
+    0 4px 16px rgba(0,0,0,.4);
+
 }
 
-/* ===== 深色模式强制 ===== */
-.dark {
-  --vp-c-brand-1: #f6821f;
-  --vp-c-brand-2: #fb923c;
-  --vp-c-brand-3: #fdba74;
-  --vp-c-brand-soft: rgba(246, 130, 31, 0.14);
-}
 
-/* ===== 全局样式 ===== */
+
+/* ===============================
+   全局
+   =============================== */
+
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
+
 
 body {
-  background: #0a0a0f;
-  color: rgba(255, 255, 255, 0.85);
+
+  background:
+    var(--vp-c-bg);
+
+  color:
+    var(--vp-c-text-1);
+
 }
 
-/* ===== VitePress 导航栏覆盖 ===== */
+
+
+/* ===============================
+   导航栏
+   =============================== */
+
+
 .VPNav {
-  background: rgba(10, 10, 15, 0.85) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+
+  background:
+    var(--vp-c-bg) !important;
+
+  backdrop-filter:
+    blur(12px);
+
+  border-bottom:
+    1px solid var(--vp-c-divider) !important;
+
 }
+
 
 .VPNavBarTitle .title {
-  font-weight: 700;
+
+  font-weight:700;
+
 }
 
-/* ===== 隐藏 VitePress 默认首页 hero ===== */
+
+
+/* ===============================
+   隐藏默认组件
+   =============================== */
+
+
 .VPHomeHero {
-  display: none !important;
+
+  display:none !important;
+
 }
 
-/* ===== VitePress Features 隐藏（改用自定义组件） ===== */
+
 .VPFeatures {
-  display: none !important;
+
+  display:none !important;
+
 }
 
-/* ===== 隐藏 VitePress 默认 footer（改用 FooterSection 组件） ===== */
+
 .VPFooter {
-  display: none !important;
+
+  display:none !important;
+
 }
 
-/* ===== 侧边栏样式优化 ===== */
+
+
+/* ===============================
+   侧边栏
+   =============================== */
+
+
 .VPSidebar {
-  background: #0c0c14 !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+
+  background:
+    var(--vp-c-bg-alt) !important;
+
+
+  border-right:
+    1px solid var(--vp-c-divider) !important;
+
 }
+
 
 .VPSidebarItem .text {
-  font-size: 14px !important;
-  color: rgba(255, 255, 255, 0.7) !important;
+
+  color:
+    var(--vp-c-text-2) !important;
+
 }
 
-.VPSidebarItem.is-active > .item > .text {
-  color: #f6821f !important;
+
+.VPSidebarItem.is-active > .item .text {
+
+  color:
+    var(--vp-c-brand-1) !important;
+
 }
 
-/* ===== 内容区域优化 ===== */
+
+
+/* ===============================
+   文档区域
+   =============================== */
+
+
+.vp-doc {
+
+  max-width:900px;
+
+  margin:auto;
+
+}
+
+
+
 .vp-doc h1 {
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #fff;
+
+  font-size:36px;
+
+  font-weight:800;
+
+  color:
+    var(--vp-c-text-1);
+
 }
+
+
 
 .vp-doc h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #fff;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 36px;
+
+  font-size:28px;
+
+  font-weight:700;
+
+  color:
+    var(--vp-c-text-1);
+
+  border-top:
+    1px solid var(--vp-c-divider);
+
+  padding-top:36px;
+
 }
+
+
 
 .vp-doc h3 {
-  font-size: 22px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+
+  font-size:22px;
+
+  font-weight:600;
+
+  color:
+    var(--vp-c-text-1);
+
 }
+
+
 
 .vp-doc p {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.8;
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  color:
+    var(--vp-c-text-2);
+
 }
 
-/* ===== 代码块优化 ===== */
-.vp-code-group .tabs label {
-  color: rgba(255, 255, 255, 0.5);
-}
 
-.vp-code-group .tabs label.active {
-  color: #f6821f;
-}
 
-div[class*='language-'] {
-  background: #0e0e18 !important;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 10px;
-}
+/* ===============================
+   列表
+   =============================== */
 
-code {
-  color: #f6821f;
-}
-
-/* ===== 链接样式 ===== */
-.vp-doc a {
-  color: #f6821f;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.vp-doc a:hover {
-  color: #fb923c;
-}
-
-/* ===== 表格样式 ===== */
-.vp-doc table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.vp-doc th {
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 600;
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-.vp-doc td {
-  color: rgba(255, 255, 255, 0.65);
-  border-color: rgba(255, 255, 255, 0.06);
-}
-
-/* ===== 滚动条 ===== */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0a0a0f;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* ===== 额外全局工具类 ===== */
-.text-gradient {
-  background: linear-gradient(135deg, #f6821f, #ff9a3c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ===== 响应式图片 ===== */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ============================================
-   章节页面 —— 专业技术教材阅读样式
-   ============================================ */
-
-/* ===== 内容区域最大宽度 ===== */
-.vp-doc {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* ===== 内容区域 padding ===== */
-.vp-doc .VPDoc .container .content {
-  padding-top: 24px;
-}
-
-/* ===== 段落阅读优化 ===== */
-.vp-doc p {
-  font-size: 16px;
-  line-height: 1.9;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 18px 0;
-}
-
-/* ===== 列表样式 ===== */
-.vp-doc ul,
-.vp-doc ol {
-  padding-left: 24px;
-  margin: 12px 0 20px 0;
-}
 
 .vp-doc li {
-  font-size: 15px;
-  line-height: 1.9;
-  color: rgba(255, 255, 255, 0.65);
-  margin: 6px 0;
+
+  color:
+    var(--vp-c-text-2);
+
+  line-height:1.9;
+
 }
 
-.vp-doc li::marker {
-  color: rgba(255, 255, 255, 0.25);
-}
 
-/* ===== 引用块 ===== */
+
+/* ===============================
+   引用
+   =============================== */
+
+
 .vp-doc blockquote {
-  border-left: 3px solid #f6821f;
-  background: rgba(246, 130, 31, 0.05);
-  border-radius: 0 8px 8px 0;
-  padding: 14px 20px;
-  margin: 24px 0;
+
+  border-left:
+    3px solid var(--vp-c-brand-1);
+
+
+  background:
+    rgba(246,130,31,.08);
+
+
+  border-radius:
+    0 8px 8px 0;
+
+
 }
 
-.vp-doc blockquote p {
-  color: rgba(255, 255, 255, 0.6);
-  margin: 0;
+
+
+/* ===============================
+   代码块
+   =============================== */
+
+
+div[class*="language-"] {
+
+
+  background:
+    var(--vp-c-bg-elv) !important;
+
+
+  border:
+
+    1px solid var(--vp-c-border);
+
+
+  border-radius:
+    10px;
+
 }
 
-/* ===== 行内代码 ===== */
-.vp-doc :not(pre) > code {
-  background: rgba(246, 130, 31, 0.08);
-  color: #f6821f;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.875em;
-  font-weight: 500;
+
+.vp-doc code {
+
+  color:
+    var(--vp-c-brand-1);
+
 }
 
-/* ===== 标题间距 ===== */
-.vp-doc h1 {
-  font-size: 36px;
-  margin: 0 0 16px 0;
+
+
+/* ===============================
+   链接
+   =============================== */
+
+
+.vp-doc a {
+
+  color:
+    var(--vp-c-brand-1);
+
 }
 
-.vp-doc h2 {
-  font-size: 26px;
-  margin: 48px 0 20px 0;
+
+.vp-doc a:hover {
+
+  color:
+    var(--vp-c-brand-2);
+
 }
 
-.vp-doc h3 {
-  font-size: 20px;
-  margin: 36px 0 14px 0;
-}
 
-/* ===== 代码块 ===== */
-.vp-doc div[class*='language-'] {
-  margin: 20px 0;
-  border-radius: 10px;
-}
 
-.vp-doc div[class*='language-'] pre {
-  padding: 16px 20px;
-}
+/* ===============================
+   表格
+   =============================== */
 
-/* ===== 代码块内字体 ===== */
-.vp-doc div[class*='language-'] code {
-  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
-  font-size: 14px;
-  line-height: 1.8;
-  color: inherit;
-}
 
-/* ===== 图片圆角和边距 ===== */
-.vp-doc p img,
-.vp-doc img {
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* ===== 表格优化 ===== */
 .vp-doc table {
-  margin: 24px 0;
-  font-size: 14px;
-  border-radius: 10px;
-  overflow: hidden;
+
+  width:100%;
+
+  border-collapse:collapse;
+
 }
+
 
 .vp-doc th {
-  padding: 12px 16px;
-  font-size: 13px;
+
+  background:
+    var(--vp-c-bg-soft);
+
+  color:
+    var(--vp-c-text-1);
+
 }
+
 
 .vp-doc td {
-  padding: 10px 16px;
+
+  color:
+    var(--vp-c-text-2);
+
 }
 
-/* ===== 右侧大纲样式 ===== */
-.VPDocAsideOutline .outline-link {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.45);
-  transition: color 0.2s;
+
+
+/* ===============================
+   图片
+   =============================== */
+
+
+.vp-doc img {
+
+  max-width:100%;
+
+  border-radius:10px;
+
 }
 
-.VPDocAsideOutline .outline-link:hover,
-.VPDocAsideOutline .outline-link.active {
-  color: #f6821f !important;
+
+
+/* ===============================
+   滚动条
+   =============================== */
+
+
+::-webkit-scrollbar {
+
+  width:6px;
+
 }
 
-/* ===== 左侧导航激活项 ===== */
-.VPSidebarItem.is-active > .item > .link > .text {
-  color: #f6821f !important;
-  font-weight: 600;
+
+::-webkit-scrollbar-track {
+
+  background:
+    var(--vp-c-bg);
+
 }
 
-/* ===== 上一章/下一章 默认导航优化 ===== */
-.VPDocFooter .prev .text,
-.VPDocFooter .next .text {
-  color: rgba(255, 255, 255, 0.45) !important;
-  font-size: 12px;
+
+::-webkit-scrollbar-thumb {
+
+  background:
+    rgba(128,128,128,.3);
+
+  border-radius:3px;
+
 }
 
-.VPDocFooter .prev .title,
-.VPDocFooter .next .title {
-  color: rgba(255, 255, 255, 0.7) !important;
+
+
+/* ===============================
+   工具类
+   =============================== */
+
+
+.text-gradient {
+
+
+  background:
+    linear-gradient(
+      135deg,
+      #f6821f,
+      #ff9a3c
+    );
+
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
 }
 
-.VPDocFooter .prev:hover .title,
-.VPDocFooter .next:hover .title {
-  color: #f6821f !important;
+
+
+/* ===============================
+   响应式
+   =============================== */
+
+
+@media(max-width:768px){
+
+
+.vp-doc h1{
+
+font-size:28px;
+
 }
 
-/* ===== 分隔线 ===== */
-.vp-doc hr {
-  border-color: rgba(255, 255, 255, 0.06);
-  margin: 36px 0;
+
+.vp-doc h2{
+
+font-size:22px;
+
 }
 
-/* ===== strong 加粗优化 ===== */
-.vp-doc strong {
-  color: rgba(255, 255, 255, 0.9);
+
+.vp-doc p{
+
+font-size:15px;
+
 }
 
-/* ===== 响应式适配 ===== */
-@media (max-width: 768px) {
-  .vp-doc h1 { font-size: 28px; }
-  .vp-doc h2 { font-size: 22px; margin-top: 36px; }
-  .vp-doc h3 { font-size: 18px; }
-  .vp-doc p { font-size: 15px; }
+
 }
