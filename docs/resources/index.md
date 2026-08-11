@@ -1,38 +1,58 @@
-# 资源
+---
+title: 学习资源中心 - 人人都能学会的互联网基础设施
+description: 围绕《人人都能学会的互联网基础设施》的延伸学习资源——基础知识、学习方法与中立的参考来源，帮助你建立长期可用的数字认知。
+---
 
-学习过程中可能用到的参考资源、工具和链接。
+# 学习资源中心
+
+这里不是「工具下载站」，也不是「厂商产品清单」。
+
+它是课程的**延伸学习入口**：帮你找到合适的基础知识、掌握有效的学习方法，并知道去哪里查中立、可靠的资料。
+
+## 一、基础知识资源
+
+按课程四阶段，整理你可能需要进一步了解的方向：
+
+| 方向 | 可以关注什么 |
+|------|--------------|
+| 互联网基础 | 网络如何连接、地址与导航系统、数据如何传输 |
+| 网络安全 | 加密与证书、身份认证、安全通信的基本思路 |
+| 服务器基础 | 服务器、虚拟化、容器等「房子」承载服务的方式 |
+| 数据管理 | 个人数据存储、备份、私有仓库的组织思路 |
+| AI 基础 | 模型、数据、算力之间的关系，知识库与助手的概念 |
+
+> 这些方向都不是「某一种产品的用法」，而是帮助你看懂底层原理的通识。
+
+## 二、学习方法资源
+
+比记住结论更重要的是建立自己的认知方法：
+
+- **如何阅读章节**：先抓住「这一章在讲城市里的哪一层」，再向下看细节。
+- **如何建立知识体系**：用「角色 → 关系 → 架构 → 能力」的框架，把零散知识点连成地图。
+- **如何理解复杂技术**：找一个你熟悉的生活比喻（道路、门牌、房子、仓库），把陌生概念「翻译」进去。
+
+> 课程《学习指南》对上述方法展开了更具体的建议，可配合阅读。
+
+## 三、参考资源（中立、开放）
+
+以下类型的资料适合作为查证的起点；它们多为标准组织或开放文档，不偏向某一家厂商：
+
+```
+理解现象
+   ↓
+掌握原理
+   ↓
+建立方法
+   ↓
+形成能力
+```
+
+- **官方标准组织**：互联网核心协议与标准由中立组织制定（如负责互联网工程标准的任务组、负责域名的国际组织、负责 Web 标准的联盟等），适合追溯「规范本身」。
+- **开放技术文档**：以讲解原理为主的公开技术文档与百科式资料，适合建立通识。
+- **基础知识网站**：面向大众科普网络与计算机基础知识的站点，适合零基础入门。
+
+> 我们不推荐某一款软件、某一家云厂商或某一种商业服务。理解原理之后，是否、以及如何选用具体工具，由你自己决定。
 
 ---
 
-## 官方资源
-
-- [Cloudflare 官方文档](https://developers.cloudflare.com/)
-- [Cloudflare Blog](https://blog.cloudflare.com/)
-- [Cloudflare Learning Center](https://www.cloudflare.com/learning/)
-- [Cloudflare Community](https://community.cloudflare.com/)
-
-## 工具推荐
-
-| 工具 | 用途 | 链接 |
-|------|------|------|
-| Wrangler CLI | Workers/Pages 开发部署 | [GitHub](https://github.com/cloudflare/workers-sdk) |
-| cloudflared | Tunnel 客户端 | [GitHub](https://github.com/cloudflare/cloudflared) |
-| Terraform | 基础设施即代码 | [官网](https://www.terraform.io/) |
-| DNS Checker | DNS 传播检查 | [dnschecker.org](https://dnschecker.org) |
-| SSL Labs | SSL 安全检测 | [ssllabs.com](https://www.ssllabs.com/ssltest/) |
-| PageSpeed Insights | 网站性能测试 | [Google](https://pagespeed.web.dev/) |
-
-## 推荐阅读
-
-- 《计算机网络：自顶向下方法》
-- 《HTTP/2 in Action》
-- Cloudflare 官方博客技术文章
-
-## 社区
-
-- [V2EX - Cloudflare 节点](https://www.v2ex.com/go/cloudflare)
-- [Reddit r/Cloudflare](https://www.reddit.com/r/Cloudflare/)
-
----
-
-> 资源列表将持续更新。欢迎推荐优质资源！
+继续学习 👉 [返回课程路线](/chapters/)

@@ -58,6 +58,12 @@ export default defineConfig({
   title: '人人都能学会的互联网基础设施 - Internet Infrastructure Academy',
   description: '面向零基础读者的互联网基础设施认知课程：用通俗比喻讲清互联网如何运行、数据如何流动，帮你理解网络安全与AI基础设施原理，并建立属于自己的个人数字空间与数据资产。',
   lang: 'zh-CN',
+
+  // 构建排除：旧 V1.0 遗留页面不参与公开构建（源码保留，不删除、不改内容）
+  srcExclude: [
+    'projects/**',
+    'chapters/chapter-template.md'
+  ],
   head: [
     [
       'meta',
@@ -97,7 +103,7 @@ export default defineConfig({
       { text: '课程路线', link: '/chapters/' },
       { text: '章节目录', link: '/chapters/chapter00/' },
       { text: '实验环境', link: '/experiments/' },
-      { text: '工具箱', link: '/resources/' },
+      { text: '资源中心', link: '/resources/' },
       { text: '关于课程', link: '/about/' }
     ],
 
