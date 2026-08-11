@@ -105,7 +105,8 @@ onMounted(() => {
 <style scoped>
 .projects-section {
   padding: 100px 24px;
-  background: #0a0a0f;
+  background: var(--home-section-odd);
+  transition: background 0.3s ease;
 }
 
 .section-container {
@@ -129,7 +130,7 @@ onMounted(() => {
 .section-title {
   font-size: 40px;
   font-weight: 800;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0 0 16px;
   letter-spacing: -0.5px;
 }
@@ -143,7 +144,7 @@ onMounted(() => {
 
 .section-subtitle {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--home-text-muted);
   margin: 0;
 }
 
@@ -163,16 +164,16 @@ onMounted(() => {
 
 .project-card {
   padding: 36px 28px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--home-card-bg);
+  border: 1px solid var(--home-border);
   border-radius: 16px;
   transition: all 0.4s ease;
 }
 
 .project-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(59, 130, 246, 0.25);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  background: var(--home-card-bg-hover);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 16px 40px var(--home-shadow);
   transform: translateY(-4px);
 }
 
@@ -190,13 +191,13 @@ onMounted(() => {
 .project-title {
   font-size: 22px;
   font-weight: 700;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0 0 12px;
 }
 
 .project-desc {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--home-text-secondary);
   line-height: 1.7;
   margin: 0 0 28px;
 }
@@ -225,7 +226,7 @@ onMounted(() => {
 
 .arch-node span {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--home-text-muted);
   white-space: nowrap;
 }
 

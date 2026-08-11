@@ -84,8 +84,9 @@ onMounted(() => {
 <style scoped>
 .features-section {
   padding: 100px 24px;
-  background: #0c0c14;
+  background: var(--home-section-even);
   position: relative;
+  transition: background 0.3s ease;
 }
 
 .features-section::before {
@@ -119,7 +120,7 @@ onMounted(() => {
 .section-title {
   font-size: 40px;
   font-weight: 800;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0 0 16px;
   letter-spacing: -0.5px;
 }
@@ -133,7 +134,7 @@ onMounted(() => {
 
 .section-subtitle {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--home-text-muted);
   margin: 0;
   line-height: 1.6;
 }
@@ -154,8 +155,8 @@ onMounted(() => {
 
 .feature-card {
   padding: 32px 24px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--home-card-bg);
+  border: 1px solid var(--home-border);
   border-radius: 16px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -176,9 +177,9 @@ onMounted(() => {
 
 .feature-card:hover {
   transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(246, 130, 31, 0.25);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+  background: var(--home-card-bg-hover);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 20px 50px var(--home-shadow),
               0 0 30px rgba(246, 130, 31, 0.05);
 }
 
@@ -192,7 +193,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--home-card-bg-hover);
   border-radius: 14px;
   margin-bottom: 20px;
 }
@@ -204,13 +205,13 @@ onMounted(() => {
 .card-title {
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0 0 12px;
 }
 
 .card-desc {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--home-text-secondary);
   line-height: 1.6;
   margin: 0 0 20px;
 }
@@ -227,15 +228,15 @@ onMounted(() => {
 .tag {
   font-size: 12px;
   padding: 4px 10px;
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.5);
+  background: var(--home-card-bg-hover);
+  color: var(--home-text-muted);
   border-radius: 6px;
   transition: all 0.3s ease;
 }
 
 .feature-card:hover .tag {
-  background: rgba(246, 130, 31, 0.1);
-  color: #f6821f;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
 }
 
 /* ===== 响应式 ===== */

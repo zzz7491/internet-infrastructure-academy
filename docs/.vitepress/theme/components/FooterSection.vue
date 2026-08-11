@@ -64,9 +64,10 @@
 
 <style scoped>
 .footer-section {
-  background: #06060a;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--home-footer-bg);
+  border-top: 1px solid var(--home-border);
   padding: 72px 24px 36px;
+  transition: background 0.3s ease;
 }
 
 .footer-container {
@@ -88,13 +89,13 @@
 .brand-name {
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0 0 14px;
 }
 
 .brand-tagline {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--home-text-muted);
   line-height: 1.7;
   margin: 0;
 }
@@ -102,7 +103,7 @@
 .footer-title {
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--home-text-secondary);
   margin: 0 0 18px;
   letter-spacing: 0.5px;
 }
@@ -118,24 +119,24 @@
 
 .footer-links a {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--home-text-muted);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: #f6821f;
+  color: var(--vp-c-brand-1);
 }
 
 .footer-bottom {
   padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--home-border);
   text-align: center;
 }
 
 .footer-copyright {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--home-text-muted);
   margin-bottom: 6px;
 }
 
@@ -145,7 +146,7 @@
 
 .footer-built {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--home-text-muted);
 }
 
 /* ===== 响应式 ===== */

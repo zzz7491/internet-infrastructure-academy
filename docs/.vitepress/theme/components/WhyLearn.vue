@@ -76,9 +76,10 @@ onMounted(() => {
 <style scoped>
 .why-learn-section {
   padding: 100px 24px;
-  background: #0a0a0f;
+  background: var(--home-section-odd);
   position: relative;
   overflow: hidden;
+  transition: background 0.3s ease;
 }
 
 .why-learn-section::before {
@@ -107,7 +108,7 @@ onMounted(() => {
 .section-title {
   font-size: 40px;
   font-weight: 800;
-  color: #fff;
+  color: var(--home-text-primary);
   line-height: 1.3;
   margin: 0 0 28px;
   letter-spacing: -0.5px;
@@ -122,7 +123,7 @@ onMounted(() => {
 
 .section-intro {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--home-text-secondary);
   line-height: 1.7;
   margin: 0 0 24px;
 }
@@ -141,10 +142,10 @@ onMounted(() => {
   align-items: center;
   gap: 14px;
   padding: 14px 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--home-card-bg);
+  border: 1px solid var(--home-border);
   border-radius: 10px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--home-text-secondary);
   font-size: 15px;
   opacity: 0;
   transform: translateX(-20px);
@@ -158,8 +159,8 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(246, 130, 31, 0.15);
-  color: #f6821f;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
   border-radius: 50%;
   font-size: 14px;
   font-weight: 700;
@@ -167,13 +168,13 @@ onMounted(() => {
 
 .section-conclusion {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--home-text-secondary);
   line-height: 1.7;
   margin: 0;
 }
 
 .em {
-  color: #f6821f;
+  color: var(--vp-c-brand-1);
   font-weight: 600;
 }
 
@@ -186,14 +187,14 @@ onMounted(() => {
 .visual-card {
   width: 280px;
   padding: 32px 24px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--home-card-bg);
+  border: 1px solid var(--home-border);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 60px var(--home-shadow);
 }
 
 .visual-layer {
@@ -235,7 +236,7 @@ onMounted(() => {
 }
 
 .visual-arrow {
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--home-text-muted);
   font-size: 18px;
   padding: 4px 0;
 }

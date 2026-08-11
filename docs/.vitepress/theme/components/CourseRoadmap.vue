@@ -125,8 +125,9 @@ onMounted(() => {
 <style scoped>
 .roadmap-section {
   padding: 100px 24px;
-  background: #0c0c14;
+  background: var(--home-section-even);
   position: relative;
+  transition: background 0.3s ease;
 }
 
 .section-container {
@@ -150,7 +151,7 @@ onMounted(() => {
 .section-title {
   font-size: 40px;
   font-weight: 800;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0 0 16px;
   letter-spacing: -0.5px;
 }
@@ -164,7 +165,7 @@ onMounted(() => {
 
 .section-subtitle {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--home-text-muted);
   margin: 0;
 }
 
@@ -255,7 +256,7 @@ onMounted(() => {
 .phase-title {
   font-size: 22px;
   font-weight: 700;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0;
 }
 
@@ -279,8 +280,8 @@ onMounted(() => {
 }
 
 .chapter-item:hover {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.08);
+  background: var(--home-card-bg);
+  border-color: var(--home-border);
 }
 
 .ch-num {
@@ -293,22 +294,22 @@ onMounted(() => {
 .ch-name {
   flex: 1;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--home-text-secondary);
   transition: color 0.25s ease;
 }
 
 .chapter-item:hover .ch-name {
-  color: #fff;
+  color: var(--home-text-primary);
 }
 
 .ch-arrow {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--home-text-muted);
   transition: all 0.25s ease;
 }
 
 .chapter-item:hover .ch-arrow {
-  color: #f6821f;
+  color: var(--vp-c-brand-1);
   transform: translateX(4px);
 }
 

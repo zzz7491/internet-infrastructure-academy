@@ -6,6 +6,8 @@
       <canvas ref="networkCanvas" class="network-canvas"></canvas>
       <div class="bg-gradient"></div>
       <div class="bg-grid"></div>
+      <div class="watermark-mask"></div>
+      <div class="hero-overlay"></div>
     </div>
 
     <!-- 内容层 -->
@@ -176,9 +178,10 @@ function initNetworkCanvas() {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #08080d;
+  background: var(--home-hero-bg);
   margin-top: -64px;
   padding-top: 64px;
+  transition: background 0.3s ease;
 }
 
 /* ===== 背景层 ===== */
@@ -201,8 +204,9 @@ function initNetworkCanvas() {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35;
+  opacity: var(--home-hero-img-opacity);
   z-index: 1;
+  transition: opacity 0.3s ease;
 }
 
 .bg-gradient {
@@ -219,17 +223,34 @@ function initNetworkCanvas() {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    linear-gradient(var(--home-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--home-grid-line) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 70%);
 }
 
+.watermark-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(circle at 96% 96%, var(--home-hero-bg) 0%, transparent 28%);
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: var(--home-hero-overlay);
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
 /* ===== 内容层 ===== */
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 4;
   text-align: center;
   padding: 80px 24px 60px;
   max-width: 900px;
@@ -241,10 +262,10 @@ function initNetworkCanvas() {
   align-items: center;
   gap: 8px;
   padding: 6px 18px;
-  border: 1px solid rgba(246, 130, 31, 0.3);
+  border: 1px solid var(--vp-c-brand-1);
   border-radius: 50px;
-  background: rgba(246, 130, 31, 0.08);
-  color: #f6821f;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -264,7 +285,7 @@ function initNetworkCanvas() {
   font-size: 56px;
   font-weight: 800;
   line-height: 1.2;
-  color: #ffffff;
+  color: var(--home-text-primary);
   margin: 0 0 20px;
   letter-spacing: -1px;
   animation: fadeInUp 0.8s ease-out 0.1s both;
@@ -280,7 +301,7 @@ function initNetworkCanvas() {
 .hero-subtitle {
   font-size: 20px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--home-text-secondary);
   margin: 0 0 12px;
   font-weight: 400;
   animation: fadeInUp 0.8s ease-out 0.2s both;
@@ -288,7 +309,7 @@ function initNetworkCanvas() {
 
 .hero-desc {
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--home-text-muted);
   margin: 0 0 40px;
   animation: fadeInUp 0.8s ease-out 0.3s both;
 }
@@ -333,9 +354,9 @@ function initNetworkCanvas() {
 
 .btn-secondary {
   padding: 14px 32px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--home-border);
+  background: var(--home-card-bg);
+  color: var(--home-text-secondary);
   font-size: 16px;
   font-weight: 500;
   border-radius: 10px;
@@ -344,9 +365,9 @@ function initNetworkCanvas() {
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #fff;
+  background: var(--home-card-bg-hover);
+  border-color: var(--vp-c-brand-1);
+  color: var(--home-text-primary);
   transform: translateY(-2px);
 }
 
@@ -367,15 +388,15 @@ function initNetworkCanvas() {
   gap: 4px;
   padding: 10px 12px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--home-card-bg);
+  border: 1px solid var(--home-border);
   transition: all 0.3s ease;
   min-width: 70px;
 }
 
 .chain-node:hover {
-  background: rgba(246, 130, 31, 0.1);
-  border-color: rgba(246, 130, 31, 0.3);
+  background: var(--vp-c-brand-soft);
+  border-color: var(--vp-c-brand-1);
   transform: translateY(-4px);
 }
 
@@ -385,7 +406,7 @@ function initNetworkCanvas() {
 
 .chain-node span {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--home-text-muted);
   white-space: nowrap;
 }
 

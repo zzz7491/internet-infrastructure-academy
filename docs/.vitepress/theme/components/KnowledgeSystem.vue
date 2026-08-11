@@ -89,8 +89,9 @@ onMounted(() => {
 <style scoped>
 .knowledge-section {
   padding: 100px 24px;
-  background: #0a0a0f;
+  background: var(--home-section-odd);
   position: relative;
+  transition: background 0.3s ease;
 }
 
 .section-container {
@@ -114,7 +115,7 @@ onMounted(() => {
 .section-title {
   font-size: 40px;
   font-weight: 800;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0 0 16px;
   letter-spacing: -0.5px;
 }
@@ -128,7 +129,7 @@ onMounted(() => {
 
 .section-subtitle {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--home-text-muted);
   margin: 0;
 }
 
@@ -149,8 +150,8 @@ onMounted(() => {
 .knowledge-card {
   position: relative;
   padding: 36px 28px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--home-card-bg);
+  border: 1px solid var(--home-border);
   border-radius: 16px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
@@ -158,9 +159,9 @@ onMounted(() => {
 
 .knowledge-card:hover {
   transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(59, 130, 246, 0.3);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  background: var(--home-card-bg-hover);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 16px 40px var(--home-shadow);
 }
 
 .k-glow {
@@ -196,13 +197,13 @@ onMounted(() => {
 .k-title {
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0 0 10px;
 }
 
 .k-desc {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--home-text-secondary);
   line-height: 1.6;
   margin: 0;
 }

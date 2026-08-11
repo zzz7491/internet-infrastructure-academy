@@ -95,7 +95,8 @@ onMounted(() => {
 <style scoped>
 .env-section {
   padding: 100px 24px;
-  background: #0c0c14;
+  background: var(--home-section-even);
+  transition: background 0.3s ease;
 }
 
 .section-container {
@@ -119,7 +120,7 @@ onMounted(() => {
 .section-title {
   font-size: 40px;
   font-weight: 800;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0 0 16px;
   letter-spacing: -0.5px;
 }
@@ -133,7 +134,7 @@ onMounted(() => {
 
 .section-subtitle {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--home-text-muted);
   margin: 0;
 }
 
@@ -153,14 +154,14 @@ onMounted(() => {
 
 .env-level {
   padding: 36px 28px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--home-card-bg);
+  border: 1px solid var(--home-border);
   border-radius: 16px;
   transition: all 0.4s ease;
 }
 
 .env-level:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--home-card-bg-hover);
   transform: translateY(-4px);
 }
 
@@ -195,7 +196,7 @@ onMounted(() => {
 .level-title {
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: var(--home-text-primary);
   margin: 0;
 }
 
@@ -213,13 +214,13 @@ onMounted(() => {
   align-items: center;
   gap: 14px;
   padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--home-card-bg-hover);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .level-item:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--home-card-bg);
 }
 
 .item-icon {
@@ -229,7 +230,7 @@ onMounted(() => {
 
 .item-name {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--home-text-secondary);
   line-height: 1.4;
 }
 

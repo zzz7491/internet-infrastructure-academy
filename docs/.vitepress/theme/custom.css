@@ -108,6 +108,58 @@ html.dark {
 
 
 /* ============================================
+   1.5 首页自定义组件主题变量
+   ============================================ */
+
+
+html:root {
+  /* 区块背景 */
+  --home-hero-bg: #f6f8fa;
+  --home-section-odd: #ffffff;
+  --home-section-even: #f6f6f7;
+  --home-footer-bg: #ebedf0;
+
+  /* 文字 */
+  --home-text-primary: #213547;
+  --home-text-secondary: #3c3c43;
+  --home-text-muted: rgba(60, 60, 67, 0.55);
+
+  /* 卡片/边框/装饰 */
+  --home-border: rgba(0, 0, 0, 0.08);
+  --home-card-bg: rgba(0, 0, 0, 0.03);
+  --home-card-bg-hover: rgba(0, 0, 0, 0.05);
+  --home-grid-line: rgba(0, 0, 0, 0.05);
+  --home-shadow: rgba(0, 0, 0, 0.08);
+
+  /* Hero 背景图 */
+  --home-hero-img-opacity: 0.12;
+  --home-hero-overlay: rgba(246, 248, 250, 0.88);
+}
+
+
+html.dark {
+  --home-hero-bg: #08080d;
+  --home-section-odd: #0a0a0f;
+  --home-section-even: #0c0c14;
+  --home-footer-bg: #06060a;
+
+  --home-text-primary: rgba(255, 255, 255, 0.92);
+  --home-text-secondary: rgba(255, 255, 255, 0.68);
+  --home-text-muted: rgba(255, 255, 255, 0.45);
+
+  --home-border: rgba(255, 255, 255, 0.08);
+  --home-card-bg: rgba(255, 255, 255, 0.03);
+  --home-card-bg-hover: rgba(255, 255, 255, 0.05);
+  --home-grid-line: rgba(255, 255, 255, 0.015);
+  --home-shadow: rgba(0, 0, 0, 0.4);
+
+  --home-hero-img-opacity: 0.35;
+  --home-hero-overlay: rgba(8, 8, 13, 0.75);
+}
+
+
+
+/* ============================================
    2. 全局
    ============================================ */
 
